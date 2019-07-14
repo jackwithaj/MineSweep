@@ -6,9 +6,9 @@ program MineSweeper;
 
 uses
   System.SysUtils,
-  uBoard in 'uBoard.pas',
-  uTiles in 'uTiles.pas',
-  uGame in 'uGame.pas';
+  uBoard in 'src/uBoard.pas',
+  uTiles in 'src/uTiles.pas',
+  uGame in 'src/uGame.pas';
 
 begin
   try

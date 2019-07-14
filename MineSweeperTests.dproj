@@ -116,9 +116,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <DCC_ExeOutput>.\$(Platform)\bin</DCC_ExeOutput>
+        <DCC_ExeOutput>.\bin</DCC_ExeOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>..\(None)</Manifest_File>
+        <DCC_UnitSearchPath> .\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -130,10 +131,10 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="utTileTests.pas"/>
-        <DCCReference Include="uBoard.pas"/>
-        <DCCReference Include="uGame.pas"/>
-        <DCCReference Include="uTiles.pas"/>
+        <DCCReference Include="src\unitTests\utTileTests.pas"/>
+        <DCCReference Include="src\uBoard.pas"/>
+        <DCCReference Include="src\uGame.pas"/>
+        <DCCReference Include="src\uTiles.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

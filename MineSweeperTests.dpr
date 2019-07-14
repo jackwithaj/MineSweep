@@ -11,10 +11,10 @@ uses
   DUnitX.Loggers.Console,
   DUnitX.Loggers.Xml.NUnit,
   DUnitX.TestFramework,
-  utTileTests in 'utTileTests.pas',
-  uBoard in 'uBoard.pas',
-  uGame in 'uGame.pas',
-  uTiles in 'uTiles.pas';
+  utTileTests in 'src/unitTests/utTileTests.pas',
+  uBoard in 'src/uBoard.pas',
+  uGame in 'src/uGame.pas',
+  uTiles in 'src/uTiles.pas';
 
 var
   runner : ITestRunner;
