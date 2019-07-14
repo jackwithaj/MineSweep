@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D1D865E8-BA6F-4ABC-814A-68D4F236B88B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MineSweeper.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MineSweeperTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MineSweeper">
+        <MSBuild Projects="MineSweeper.dproj"/>
+    </Target>
+    <Target Name="MineSweeper:Clean">
+        <MSBuild Projects="MineSweeper.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MineSweeper:Make">
+        <MSBuild Projects="MineSweeper.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MineSweeperTests">
+        <MSBuild Projects="MineSweeperTests.dproj"/>
+    </Target>
+    <Target Name="MineSweeperTests:Clean">
+        <MSBuild Projects="MineSweeperTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MineSweeperTests:Make">
+        <MSBuild Projects="MineSweeperTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MineSweeper;MineSweeperTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MineSweeper:Clean;MineSweeperTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MineSweeper:Make;MineSweeperTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
